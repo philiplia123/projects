@@ -7,13 +7,15 @@ using namespace std;
 that includes 2+ lines */
 
 int main() {
-   int countDown = 3; 
-
-   while (countDown > 0) {
-    cout << countDown << endl; 
-    countDown--; 
+   int value; 
+   if (value == 10 || value == 8 || value == 5 || value == 2) {
+      cout << value * 2 << endl;
+   } else {
+      cout << value << endl; 
    }
-   cout << "happy new year" << endl; 
+      
+
+
     
    
 }
