@@ -1,4 +1,4 @@
-// Qihong Liang, 2/20/2025, COMSCI 201, Assignment 1 - Spring 2025
+// Qihong Liang, 2/19/2025, COMSCI 201, Assignment 1 - Spring 2025
 
 #include <iostream> 
 #include <string> 
