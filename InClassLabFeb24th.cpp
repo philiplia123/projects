@@ -24,6 +24,7 @@ char checkio(string text) {
         if (freq[i] > maxFreq) {
             maxFreq = freq[1]; 
             mostFreqChar = 'a' + i; 
+            
         }
     }
     return mostFreqChar; 
