@@ -55,7 +55,7 @@ int main(){
             // quit the program
             cout << "Exiting program, goodbye!" << endl; 
             running = false; 
-            
+
         } else {
         cout << "Invalid choice, please try again." << endl << endl; 
     }
