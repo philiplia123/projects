@@ -1,27 +1,42 @@
 #include <iostream>
-#include <string> 
-using namespace std; 
+#include <string>
+using namespace std;
+
+// Function prototype
+string first_word(string text);
 
 int main() {
-    string input1, input2; 
+    // Test cases
+    cout << "first_word(\"Hello world\") => \"" << first_word("Hello world") << "\"" << endl;
+    cout << "first_word(\"greetings, friends\") => \"" << first_word("greetings, friends") << "\"" << endl;
+    cout << "first_word(\"  spaces at start\") => \"" << first_word("  spaces at start") << "\"" << endl;
+    cout << "first_word(\".dot at start\") => \"" << first_word(".dot at start") << "\"" << endl;
+    cout << "first_word(\"OneWord\") => \"" << first_word("OneWord") << "\"" << endl;
+    
+    return 0;
+}
 
-    // get the input from both players 
-    cout << "Player 1, please enter rock, paper, or scissors: " << endl; 
-    cin >> input1; 
-
-    cout << "Player 2, please enter rock, paper or scissors: " << endl; 
-    cin >> input2; 
-
-    // check for tie 
-    if (input1 == input2) {
-        cout << "It's a tie!" << endl; 
-    } else if ((input1 == "rock" && input2 == "scissors" 
-        || input1 == "scissors" && input2 == "paper" 
-        || input1 == "paper" && input2 == "rock")) {
-            cout << "Player 1 wins!" << endl; 
-    } else {
-        cout << "Player 2 wins!" << endl; 
+// Function that returns the first word in a sentence
+// INPUT PARAMETER(S): A string
+// RETURN (cout): Nothing is outputted
+// RETURN VALUE(S): A string (the first word)
+string first_word(string text) {
+    string firstWord = "";
+    int startIndex = 0;
+    
+    // Skip leading spaces, dots, and commas
+    while (startIndex < text.length() && 
+           (text[startIndex] == ' ' || text[startIndex] == '.' || text[startIndex] == ',')) {
+        startIndex++;
     }
-
-    return 0; 
+    
+    // Extract characters until we hit a space, comma, dot, or end of string
+    for (int i = startIndex; i < text.length(); i++) {
+        if (text[i] == ' ' || text[i] == ',' || text[i] == '.') {
+            break;  // Stop when we hit a delimiter
+        }
+        firstWord += text[i];
+    }
+    
+    return firstWord;
 }
