@@ -17,7 +17,7 @@ int main() {
     
     int radius = 39; //birthday Math + Day = 11 + 28 
     int randomPoints = 500000; //sets the max hit points to 500,000 
-    int pointsInsideCircle = 0; //defaults the starting point as 0 
+    int pointsInsideCircle = 0; //sets the starting point as 0 
 
 
     // bounds from circle in the picture: from -1 to 1 
