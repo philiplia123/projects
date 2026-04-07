@@ -1,3 +1,5 @@
+// Qihong Liang, 4/2/2026, COMSCI 201, In-class Lab 
+
 #include <iostream> 
 #include <vector> 
 #include <cstdlib> 
