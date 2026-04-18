@@ -221,7 +221,7 @@ void Library::loadFromFile() {
 
         books[i] = Book(id, title, author, genre); 
         if (checkedOut) {
-            books[i].checkedOut(borrower); 
+            books[i].checkOut(borrower); --> // checkedOut is a private variable, not a function. It should be calling the checkOut method instead. --> fixed 
         }
     }
 
