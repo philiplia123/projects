@@ -2,7 +2,7 @@
 #include <string>
 #include "Library.h"
 using namespace std;
- 
+
 // Print the main menu
 void printMenu() {
     cout << "\n==============================" << endl;
@@ -24,91 +24,91 @@ void printMenu() {
 
 int main() {
     Library library;
-    int choice; 
+    int choice;
 
     cout << "Welcome to the Library Management System!" << endl;
 
-    // keep showing the menu until the user chooses to exit 
+    // Keep showing the menu until the user chooses to exit
     do {
-        printMenu(); 
-        cin >> choice; 
-        cin.ignore(); // ignore the newline character after the choice input
+        printMenu();
+        cin >> choice;
+        cin.ignore(); // clear the newline left in the input buffer
 
         if (choice == 1) {
-            // show all books 
-            library.displayAll(); 
+            // Show all books
+            library.displayAll();
 
-        }   else if (choice == 2) {
-            // show only available books
-            library.displayAvailable(); 
+        } else if (choice == 2) {
+            // Show only available books
+            library.displayAvailable();
 
-        }   else if (choice == 3) {
-            // show only checked out books
+        } else if (choice == 3) {
+            // Show only checked out books
             library.displayCheckedOut();
 
-        }   else if (choice == 4) {
-            // add a new book to the library
-            string title, author, genre; 
-            cout << "Enter book title: ";
-            getline(cin, title); 
-            cout << "Enter book author: ";
-            getline(cin, author); 
-            cout << "Enter book genre: ";
-            getline(cin, genre); 
-            library.addBook(title, author, genre); 
+        } else if (choice == 4) {
+            // Add a new book
+            string title, author, genre;
+            cout << "Enter title: ";
+            getline(cin, title);
+            cout << "Enter author: ";
+            getline(cin, author);
+            cout << "Enter genre: ";
+            getline(cin, genre);
+            library.addBook(title, author, genre);
 
-        }   else if (choice == 5) {
-            // remove a book by ID 
-            int id; 
-            library.displayAll(); 
+        } else if (choice == 5) {
+            // Remove a book by ID
+            int id;
+            library.displayAll();
             cout << "Enter the ID of the book to remove: ";
-            cin >> id; 
-            cin.ignore(); 
-            library.removeBook(id); 
+            cin >> id;
+            cin.ignore();
+            library.removeBook(id);
 
-        }   else if (choice == 6) {
-            // search by title 
-            string title; 
+        } else if (choice == 6) {
+            // Search by title
+            string title;
             cout << "Enter title to search: ";
-            getline(cin, title); 
+            getline(cin, title);
             library.searchByTitle(title);
 
-        }   else if (choice == 7){
-            // search by author 
-            string author; 
+        } else if (choice == 7) {
+            // Search by author
+            string author;
             cout << "Enter author to search: ";
-            getline(cin, author); 
+            getline(cin, author);
             library.searchByAuthor(author);
 
-        }   else if (choice == 8) {
-            // check out a book by ID
-            int id; 
+        } else if (choice == 8) {
+            // Check out a book
+            int id;
             string name;
-            library.displayAvailable(); 
+            library.displayAvailable();
             cout << "Enter the ID of the book to check out: ";
-            cin >> id; 
-            cin.ignore(); 
+            cin >> id;
+            cin.ignore();
             cout << "Enter your name: ";
-            getline(cin, name); 
-            library.checkOutBook(id); 
+            getline(cin, name);
+            library.checkOutBook(id, name);
 
-        }   else if (choice == 9) {
-            // check in a book by ID
-            int id; 
-            library.displayCheckedOut(); 
+        } else if (choice == 9) {
+            // Check in a book
+            int id;
+            library.displayCheckedOut();
             cout << "Enter the ID of the book to check in: ";
-            cin >> id; 
-            cin.ignore(); 
-            library.checkInBook(id); 
+            cin >> id;
+            cin.ignore();
+            library.checkInBook(id);
 
-        }   else if (choice == 0) {
-            cout << "Exiting the program. Goodbye!" << endl;
-        }   else {
+        } else if (choice == 0) {
+            cout << "Goodbye!" << endl;
+
+        } else {
             cout << "Invalid choice. Please try again." << endl;
         }
-    } while (choice != 0); 
 
-    return 0; 
+    } while (choice != 0);
 
-
+    return 0;
 }

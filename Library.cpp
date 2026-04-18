@@ -188,6 +188,43 @@ void Library::saveToFile() {
         outFile << books[i].isCheckedOut() << ","; 
         outFile << books[i].getBorrower() << endl;
     }
+    outFile.close();
+}
 
+// load book data from the text file 
+void Library::loadFromFile() {
+    ifstream inFile("Library_data.txt"); 
+
+    // if the file doesn't exist, just return 
+    if (inFile) {
+        return; 
+    }
+
+    // read the next ID and book count from the first line 
+    inFile >> nextId >> bookCount; 
+    inFile.ignore(); // ignore the newline after the first line
+
+    // read each book's data
+    for (int i = 0; i < bookCount; i++) {
+        int id; 
+        string title, author, genre, borrower; 
+        bool checkedOut; 
+
+        inFile >> id; 
+        inFile.ignore(); 
+        getline(inFile, title); 
+        getline(inFile, author); 
+        getline(inFile, genre); 
+        inFile >> checkedOut; 
+        inFile.ignore();
+        getline(inFile, borrower); 
+
+        books[i] = Book(id, title, author, genre); 
+        if (checkedOut) {
+            books[i].checkedOut(borrower); 
+        }
+    }
+
+    inFile.close(); 
 }
 
