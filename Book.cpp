@@ -1,3 +1,5 @@
+// Qihong Liang Final Project, COMSCi 201, 4/26/2026 
+
 #include "Book.h"
 #include <iostream> 
 using namespace std; 
