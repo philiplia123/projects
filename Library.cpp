@@ -13,7 +13,7 @@ Library::Library() {
 }
 
 // Add a new book to the library
-void Library::addBook(string title, string author, string genre) {
+void Library::addBook(string title, string author, string genre) {    // used a plain array with a counter variable to store the books 
     // Check if there is room for another book
     if (bookCount >= MAX_BOOKS) {
         cout << "  Sorry, the library is full." << endl;
@@ -172,7 +172,7 @@ void Library::displayCheckedOut() {
 }
 
 // Save all book data to a text file
-void Library::saveToFile() {
+void Library::saveToFile() {   // file I/O --> everytime a change is made, it writes to a text file, and when the program starts it reads the file back in  
     ofstream outFile("library_data.txt");
 
     if (!outFile) {

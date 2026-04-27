@@ -24,13 +24,13 @@ void printMenu() {
     cout << "Enter your choice: ";
 }
 
-int main() {
+int main() { 
     Library library;
     int choice;
 
     cout << "Welcome to the Library Management System!" << endl;
 
-    // Keep showing the menu until the user chooses to exit
+    // a big do/while loop to keep showing the menu until the user chooses to exit
     do {
         printMenu();
         cin >> choice;

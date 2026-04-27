@@ -9,7 +9,7 @@ using namespace std;
  
 // Book class stores information about a single book
 class Book {
-private:
+private: // private variables 
     int id;
     string title;
     string author;
@@ -17,7 +17,7 @@ private:
     bool checkedOut;
     string borrower;
  
-public:
+public: // public functions to access and change the variables 
     // Constructor
     Book();
     Book(int id, string title, string author, string genre);
