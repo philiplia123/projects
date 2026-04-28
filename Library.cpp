@@ -13,7 +13,7 @@ Library::Library() {
 }
 
 // Add a new book to the library
-void Library::addBook(string title, string author, string genre) {    // used a plain array with a counter variable to store the books 
+void Library::addBook(string title, string author, string genre) {    // used a  array with a counter variable to store the books 
     // Check if there is room for another book
     if (bookCount >= MAX_BOOKS) {
         cout << "  Sorry, the library is full." << endl;
